@@ -1,9 +1,10 @@
 pipeline {
-    agent any
+    agent { node { label 'workplace' } }
     stages {
         stage('workplace') {
             steps {
                 echo "hello world"
+                sh 'env'
             }
         }
     }
