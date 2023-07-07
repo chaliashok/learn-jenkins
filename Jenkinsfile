@@ -1,6 +1,6 @@
-pipeline {
-   agent { node { label 'workplace' } }
-   environment {
+  pipeline {
+    agent { node { label 'workplace' } }
+    environment {
        SSH = credentials('SSH')
        DEMO_URL = "google.com"
      }
@@ -12,4 +12,4 @@ pipeline {
             }
         }
     }
-}
+  }
