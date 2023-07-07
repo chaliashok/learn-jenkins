@@ -1,11 +1,10 @@
 pipeline {
-   workplace
+    agent any
     stages {
-        stage('echo hello') {
+        stage('workplace') {
             steps {
-                sh echo hi
+                echo "hello world"
             }
         }
-
     }
 }
