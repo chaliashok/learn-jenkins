@@ -1,0 +1,11 @@
+pipeline {
+   workplace
+    stages {
+        stage('echo hello') {
+            steps {
+                sh echo hi
+            }
+        }
+
+    }
+}
