@@ -1,15 +1,34 @@
-  pipeline {
-    agent { node { label 'workplace' } }
-    environment {
-       SSH = credentials('SSH')
-       DEMO_URL = "google.com"
-     }
+pipeline {
+
+  agent { node { label 'workstation' } }
+
+  environment {
+    SSH = credentials('SSH')
+    DEMO_URL = "google.com"
+  }
+
+  options {
+    ansiColor('xterm')
+  }
+
+  parameters {
+    string(name: 'APP_INPUT', defaultValue: '', description: 'Just Input')
+  }
+
     stages {
-        stage('hello-1') {
-            steps {
-                echo "hello world"
-                sh 'env'
-            }
-        }
+    stage('Hello-1') {
+      steps {
+        echo 'Hello World'
+        sh 'env'
+        sh 'echo APP_INPUT - $APP_INPUT'
+      }
     }
   }
+
+  post {
+    always {
+      sh 'echo Post'
+    }
+  }
+
+}
