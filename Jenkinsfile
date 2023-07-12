@@ -30,6 +30,14 @@ pipeline {
         echo 'Maneesha Jenkins Learning'
       }
     }
+    stage('Example Deploy') {
+                when {
+                    branch 'production'
+                }
+                steps {
+                    echo 'Deploying'
+                }
+          }
   }
 
   post {
