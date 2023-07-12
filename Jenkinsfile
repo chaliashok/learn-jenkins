@@ -7,8 +7,9 @@ pipeline {
     DEMO_URL = "google.com"
   }
   options {
-     ansiColor('xterm')
-   }
+    ansiColor('xterm')
+  }
+
   parameters {
     string(name: 'APP_INPUT', defaultValue: '', description: 'Just Input')
   }
